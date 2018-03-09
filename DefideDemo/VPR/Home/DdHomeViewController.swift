@@ -17,6 +17,7 @@ class DdHomeViewController: UIViewController {
         didSet {
             photoCollectionView.delegate = self
             photoCollectionView.dataSource = self
+            photoCollectionView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0)
             let photoFlowLayout = DdPhotoFlowLayout()
             photoFlowLayout.scrollDirection = .vertical
             photoFlowLayout.cellSpacing = spacing
@@ -69,7 +70,7 @@ extension DdHomeViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         var cellWidth = (DdGuiConstant.screenWidth - (numberOfCol - 1) * spacing) / numberOfCol
-        if (indexPath.row - 1) % 3 == 0 && (indexPath.row - 1) % 2 != 0 {
+        if indexPath.row % 6 == 4 {
             cellWidth = cellWidth * 2 + spacing
         }
         return CGSize(width: cellWidth, height: cellWidth)

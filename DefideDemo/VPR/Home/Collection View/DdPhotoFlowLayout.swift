@@ -23,10 +23,10 @@ class DdPhotoFlowLayout: UICollectionViewFlowLayout {
                     if  row % 6 == 0 || row % 6 == 1 || row % 6 == 2 { // first line in group 6
                         attribute.frame.origin.x = CGFloat(row % 6) * (minCellWidth + cellSpacing)
                         attribute.frame.origin.y = CGFloat(row / 6) * 3 * (minCellWidth + cellSpacing)
-                    } else if row % 3 == 0, row % 2 != 0 { // the 4th - left - in group 6
+                    } else if row % 6 == 3 { // the 4th - left - in group 6
                         attribute.frame.origin.x = 0
                         attribute.frame.origin.y = CGFloat(row - 1) / 2 * (minCellWidth + cellSpacing)
-                    } else if (row - 1) % 3 == 0 && (row - 1) % 2 != 0 { // the biggest item
+                    } else if row % 6 == 4 { // the biggest item
                         attribute.frame.origin.x = (minCellWidth + cellSpacing)
                         attribute.frame.origin.y = CGFloat(row - 2) / 2 * (minCellWidth + cellSpacing)
                     } else { // the last item - bottom - in group 6
@@ -37,7 +37,7 @@ class DdPhotoFlowLayout: UICollectionViewFlowLayout {
             }
             return attributes
         }
-        return nil
+        return super.layoutAttributesForElements(in: rect)
     }
     
     override var collectionViewContentSize: CGSize {
@@ -49,6 +49,7 @@ class DdPhotoFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        return true
+        guard let collectionView = collectionView else {return true}
+        return collectionView.indexPathForItem(at: newBounds.origin)?.count == 0
     }
 }

@@ -14,10 +14,13 @@ class DdHomePresentor: Presentor<DdHomeViewController> {
     var numberPerPage = 12
     var orderBy: DdPhotoOrderBy = .oldest
     var canLoadMore: Bool = true
+    var isLoading: Bool = false
     let photoInteractor = DdPhotoInteractor()
     
     func loadPhotos() {
-        guard canLoadMore else {return}
+        guard canLoadMore, !isLoading else {return}
+        isLoading = true
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         photoInteractor.listPhotos(page: page, numberPerPage: numberPerPage, orderBy: orderBy) { [weak self] (success, error, photos) in
             if success {
                 self?.viewController.photos.append(contentsOf: photos)
@@ -28,6 +31,8 @@ class DdHomePresentor: Presentor<DdHomeViewController> {
             if success && photos.count == self?.numberPerPage {
                 self?.page += 1
             }
+            self?.isLoading = false
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
 }
