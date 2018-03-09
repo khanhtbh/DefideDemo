@@ -15,35 +15,40 @@ class DdPhotoFlowLayout: UICollectionViewFlowLayout {
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         let numberOfItems = collectionView?.numberOfItems(inSection: 0)
-        if numberOfItems == 0 {return super.layoutAttributesForElements(in: rect)}
-        if let attributes = super.layoutAttributesForElements(in: rect) {
-            for (_, attribute) in attributes.enumerated() {
-                if (attribute.representedElementCategory == .cell) {
-                    let row = attribute.indexPath.row
-                    if  row % 6 == 0 || row % 6 == 1 || row % 6 == 2 { // first line in group 6
-                        attribute.frame.origin.x = CGFloat(row % 6) * (minCellWidth + cellSpacing)
-                        attribute.frame.origin.y = CGFloat(row / 6) * 3 * (minCellWidth + cellSpacing)
-                    } else if row % 6 == 3 { // the 4th - left - in group 6
-                        attribute.frame.origin.x = 0
-                        attribute.frame.origin.y = CGFloat(row - 1) / 2 * (minCellWidth + cellSpacing)
-                    } else if row % 6 == 4 { // the biggest item
-                        attribute.frame.origin.x = (minCellWidth + cellSpacing)
-                        attribute.frame.origin.y = CGFloat(row - 2) / 2 * (minCellWidth + cellSpacing)
-                    } else { // the last item - bottom - in group 6
-                        attribute.frame.origin.x = 0
-                        attribute.frame.origin.y = (CGFloat(row - 3) / 2 + 1) * (minCellWidth + cellSpacing)
-                    }
-                }
+        guard numberOfItems != 0, let attributes = super.layoutAttributesForElements(in: rect) else {return super.layoutAttributesForElements(in: rect)}
+        var newAttrs: [UICollectionViewLayoutAttributes] = []
+        for (_, attribute) in attributes.enumerated() {
+            if (attribute.representedElementCategory == .cell) {
+                let newAttr = self.layoutAttributesForItem(at: attribute.indexPath)
+                newAttrs.append(newAttr!)
             }
-            return attributes
         }
-        return super.layoutAttributesForElements(in: rect)
+        return newAttrs
+    }
+    
+    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+        let attributes = super.layoutAttributesForItem(at: indexPath)?.copy() as! UICollectionViewLayoutAttributes
+        let row = attributes.indexPath.row
+        if  row % 6 == 0 || row % 6 == 1 || row % 6 == 2 { // first line in group 6
+            attributes.frame.origin.x = CGFloat(row % 6) * (minCellWidth + cellSpacing)
+            attributes.frame.origin.y = CGFloat(row / 6) * 3 * (minCellWidth + cellSpacing)
+        } else if row % 6 == 3 { // the 4th - left - in group 6
+            attributes.frame.origin.x = 0
+            attributes.frame.origin.y = CGFloat(row - 1) / 2 * (minCellWidth + cellSpacing)
+        } else if row % 6 == 4 { // the biggest item
+            attributes.frame.origin.x = (minCellWidth + cellSpacing)
+            attributes.frame.origin.y = CGFloat(row - 2) / 2 * (minCellWidth + cellSpacing)
+        } else { // the last item - bottom - in group 6
+            attributes.frame.origin.x = 0
+            attributes.frame.origin.y = (CGFloat(row - 3) / 2 + 1) * (minCellWidth + cellSpacing)
+        }
+        return attributes
     }
     
     override var collectionViewContentSize: CGSize {
         if let collectionView = collectionView {
             let numberOfItems = collectionView.numberOfItems(inSection: 0)
-            return CGSize(width: collectionView.bounds.width, height: CGFloat(numberOfItems / 6 ) * 3 * (minCellWidth + cellSpacing))
+            return CGSize(width: collectionView.bounds.width, height: CGFloat(numberOfItems / 6 ) * 3 * (minCellWidth + cellSpacing) + 10)
         }
         return CGSize.zero
     }

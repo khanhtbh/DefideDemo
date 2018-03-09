@@ -33,6 +33,7 @@ class DdHomePresentor: Presentor<DdHomeViewController> {
             }
             self?.isLoading = false
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
+
         }
     }
 }
