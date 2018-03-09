@@ -35,7 +35,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="103" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uk0-rf-bk1">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uk0-rf-bk1">
                                                     <rect key="frame" x="0.0" y="0.0" width="103" height="99"/>
                                                 </imageView>
                                             </subviews>

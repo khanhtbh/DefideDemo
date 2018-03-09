@@ -49,7 +49,7 @@ class DdApiRequest: NSObject {
             if let params = requestParams {
                 url = url + "?"
                 for (param, value) in params {
-                    url = url + param + "=" + (value as? String ?? "") + "&"
+                    url = url + param + "=" + String(describing: value) + "&"
                 }
             }
         }

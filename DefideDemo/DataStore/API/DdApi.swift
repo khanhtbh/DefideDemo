@@ -23,6 +23,7 @@ class DdApi: NSObject {
     
     class func listPhotos(page: Int, numberPerPage: Int, orderBy: DdPhotoOrderBy) -> DdApiRequest {
         let request = DdApiRequest()
+        request.api = UnsplashApiUrl.photos
         request.requestParams = [
             "page": page,
             "per_page": numberPerPage,

@@ -23,6 +23,9 @@
 		AA37359D205241C90032F619 /* ViewControllerLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37359C205241C90032F619 /* ViewControllerLogic.swift */; };
 		AA3735A0205247F30032F619 /* DdImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37359F205247F30032F619 /* DdImageCollectionViewCell.swift */; };
 		AA3735A220524B520032F619 /* DdPhotoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3735A120524B520032F619 /* DdPhotoInteractor.swift */; };
+		AA44422520527D1100C61C48 /* DdGuiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44422420527D1100C61C48 /* DdGuiConstants.swift */; };
+		AA4442272052814100C61C48 /* DdHomePresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4442262052814100C61C48 /* DdHomePresentor.swift */; };
+		AA4442292052880F00C61C48 /* DdPhotoFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4442282052880F00C61C48 /* DdPhotoFlowLayout.swift */; };
 		C1E3489F079B44049282E4DE /* Pods_DefideDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA80B031A757BB357CF9B27 /* Pods_DefideDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +51,9 @@
 		AA37359C205241C90032F619 /* ViewControllerLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerLogic.swift; sourceTree = "<group>"; };
 		AA37359F205247F30032F619 /* DdImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		AA3735A120524B520032F619 /* DdPhotoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdPhotoInteractor.swift; sourceTree = "<group>"; };
+		AA44422420527D1100C61C48 /* DdGuiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdGuiConstants.swift; sourceTree = "<group>"; };
+		AA4442262052814100C61C48 /* DdHomePresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdHomePresentor.swift; sourceTree = "<group>"; };
+		AA4442282052880F00C61C48 /* DdPhotoFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdPhotoFlowLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 		AA373582205237950032F619 /* VPR */ = {
 			isa = PBXGroup;
 			children = (
+				AA44422320527CFD00C61C48 /* Constants */,
 				AA37359B205241BC0032F619 /* Base */,
 				AA37359A205241B40032F619 /* Home */,
 			);
@@ -181,6 +188,7 @@
 			children = (
 				AA37359E205247DF0032F619 /* Collection View */,
 				AA373571205235ED0032F619 /* DdHomeViewController.swift */,
+				AA4442262052814100C61C48 /* DdHomePresentor.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -197,8 +205,17 @@
 			isa = PBXGroup;
 			children = (
 				AA37359F205247F30032F619 /* DdImageCollectionViewCell.swift */,
+				AA4442282052880F00C61C48 /* DdPhotoFlowLayout.swift */,
 			);
 			path = "Collection View";
+			sourceTree = "<group>";
+		};
+		AA44422320527CFD00C61C48 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AA44422420527D1100C61C48 /* DdGuiConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		FFEAB5101F984437ED172D45 /* Frameworks */ = {
@@ -350,9 +367,12 @@
 				AA37358C205238A50032F619 /* DdCollection.swift in Sources */,
 				AA373593205239080032F619 /* DdApi.swift in Sources */,
 				AA37359D205241C90032F619 /* ViewControllerLogic.swift in Sources */,
+				AA44422520527D1100C61C48 /* DdGuiConstants.swift in Sources */,
 				AA3735A220524B520032F619 /* DdPhotoInteractor.swift in Sources */,
 				AA373585205237B40032F619 /* DdConstants.swift in Sources */,
+				AA4442292052880F00C61C48 /* DdPhotoFlowLayout.swift in Sources */,
 				AA3735A0205247F30032F619 /* DdImageCollectionViewCell.swift in Sources */,
+				AA4442272052814100C61C48 /* DdHomePresentor.swift in Sources */,
 				AA373572205235ED0032F619 /* DdHomeViewController.swift in Sources */,
 				AA373588205237FE0032F619 /* DdPhoto.swift in Sources */,
 				AA373570205235ED0032F619 /* AppDelegate.swift in Sources */,

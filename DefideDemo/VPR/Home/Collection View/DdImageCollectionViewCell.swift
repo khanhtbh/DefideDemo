@@ -15,7 +15,7 @@ class DdImageCollectionViewCell: UICollectionViewCell {
     var photo: DdPhoto! {
         didSet {
             if let url = photo.getUrl(resolution: .thumb) {
-                imageView.af_setImage(withURL: url)
+                imageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "placeholder") )
             }
         }
     }
