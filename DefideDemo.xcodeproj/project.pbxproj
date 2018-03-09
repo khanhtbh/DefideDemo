@@ -8,10 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		AA373570205235ED0032F619 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37356F205235ED0032F619 /* AppDelegate.swift */; };
-		AA373572205235ED0032F619 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA373571205235ED0032F619 /* ViewController.swift */; };
+		AA373572205235ED0032F619 /* DdHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA373571205235ED0032F619 /* DdHomeViewController.swift */; };
 		AA373575205235ED0032F619 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA373573205235ED0032F619 /* Main.storyboard */; };
 		AA373577205235ED0032F619 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA373576205235ED0032F619 /* Assets.xcassets */; };
 		AA37357A205235ED0032F619 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA373578205235ED0032F619 /* LaunchScreen.storyboard */; };
+		AA373585205237B40032F619 /* DdConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA373584205237B40032F619 /* DdConstants.swift */; };
+		AA373588205237FE0032F619 /* DdPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA373587205237FE0032F619 /* DdPhoto.swift */; };
+		AA37358A205238800032F619 /* DdUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA373589205238800032F619 /* DdUser.swift */; };
+		AA37358C205238A50032F619 /* DdCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37358B205238A50032F619 /* DdCollection.swift */; };
+		AA373593205239080032F619 /* DdApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37358F205239080032F619 /* DdApi.swift */; };
+		AA373594205239080032F619 /* DdApiConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA373590205239080032F619 /* DdApiConstant.swift */; };
+		AA373595205239080032F619 /* DdApiRequestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA373591205239080032F619 /* DdApiRequestor.swift */; };
+		AA373596205239080032F619 /* DdApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA373592205239080032F619 /* DdApiRequest.swift */; };
+		AA37359D205241C90032F619 /* ViewControllerLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37359C205241C90032F619 /* ViewControllerLogic.swift */; };
+		AA3735A0205247F30032F619 /* DdImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA37359F205247F30032F619 /* DdImageCollectionViewCell.swift */; };
+		AA3735A220524B520032F619 /* DdPhotoInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3735A120524B520032F619 /* DdPhotoInteractor.swift */; };
 		C1E3489F079B44049282E4DE /* Pods_DefideDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA80B031A757BB357CF9B27 /* Pods_DefideDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +32,22 @@
 		9D167F832010C4A0B9D970EF /* Pods-DefideDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DefideDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DefideDemo/Pods-DefideDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		AA37356C205235ED0032F619 /* DefideDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DefideDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA37356F205235ED0032F619 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA373571205235ED0032F619 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AA373571205235ED0032F619 /* DdHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdHomeViewController.swift; sourceTree = "<group>"; };
 		AA373574205235ED0032F619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA373576205235ED0032F619 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA373579205235ED0032F619 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA37357B205235ED0032F619 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA373584205237B40032F619 /* DdConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdConstants.swift; sourceTree = "<group>"; };
+		AA373587205237FE0032F619 /* DdPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdPhoto.swift; sourceTree = "<group>"; };
+		AA373589205238800032F619 /* DdUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdUser.swift; sourceTree = "<group>"; };
+		AA37358B205238A50032F619 /* DdCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdCollection.swift; sourceTree = "<group>"; };
+		AA37358F205239080032F619 /* DdApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DdApi.swift; sourceTree = "<group>"; };
+		AA373590205239080032F619 /* DdApiConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DdApiConstant.swift; sourceTree = "<group>"; };
+		AA373591205239080032F619 /* DdApiRequestor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DdApiRequestor.swift; sourceTree = "<group>"; };
+		AA373592205239080032F619 /* DdApiRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DdApiRequest.swift; sourceTree = "<group>"; };
+		AA37359C205241C90032F619 /* ViewControllerLogic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerLogic.swift; sourceTree = "<group>"; };
+		AA37359F205247F30032F619 /* DdImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		AA3735A120524B520032F619 /* DdPhotoInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdPhotoInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +92,113 @@
 		AA37356E205235ED0032F619 /* DefideDemo */ = {
 			isa = PBXGroup;
 			children = (
+				AA3735832052379B0032F619 /* Constants */,
+				AA37358D205238D80032F619 /* DataStore */,
+				AA373586205237D90032F619 /* Entity */,
+				AA37359820523A5D0032F619 /* Interactor */,
+				AA373582205237950032F619 /* VPR */,
+				AA3735812052377B0032F619 /* Resources */,
 				AA37356F205235ED0032F619 /* AppDelegate.swift */,
-				AA373571205235ED0032F619 /* ViewController.swift */,
-				AA373573205235ED0032F619 /* Main.storyboard */,
-				AA373576205235ED0032F619 /* Assets.xcassets */,
-				AA373578205235ED0032F619 /* LaunchScreen.storyboard */,
 				AA37357B205235ED0032F619 /* Info.plist */,
 			);
 			path = DefideDemo;
+			sourceTree = "<group>";
+		};
+		AA3735812052377B0032F619 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA373597205239BA0032F619 /* Storyboards */,
+				AA373576205235ED0032F619 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AA373582205237950032F619 /* VPR */ = {
+			isa = PBXGroup;
+			children = (
+				AA37359B205241BC0032F619 /* Base */,
+				AA37359A205241B40032F619 /* Home */,
+			);
+			path = VPR;
+			sourceTree = "<group>";
+		};
+		AA3735832052379B0032F619 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AA373584205237B40032F619 /* DdConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		AA373586205237D90032F619 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				AA373587205237FE0032F619 /* DdPhoto.swift */,
+				AA373589205238800032F619 /* DdUser.swift */,
+				AA37358B205238A50032F619 /* DdCollection.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		AA37358D205238D80032F619 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				AA37358E205239010032F619 /* API */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		AA37358E205239010032F619 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				AA373590205239080032F619 /* DdApiConstant.swift */,
+				AA373592205239080032F619 /* DdApiRequest.swift */,
+				AA373591205239080032F619 /* DdApiRequestor.swift */,
+				AA37358F205239080032F619 /* DdApi.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		AA373597205239BA0032F619 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AA373573205235ED0032F619 /* Main.storyboard */,
+				AA373578205235ED0032F619 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AA37359820523A5D0032F619 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				AA3735A120524B520032F619 /* DdPhotoInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AA37359A205241B40032F619 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				AA37359E205247DF0032F619 /* Collection View */,
+				AA373571205235ED0032F619 /* DdHomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		AA37359B205241BC0032F619 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AA37359C205241C90032F619 /* ViewControllerLogic.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		AA37359E205247DF0032F619 /* Collection View */ = {
+			isa = PBXGroup;
+			children = (
+				AA37359F205247F30032F619 /* DdImageCollectionViewCell.swift */,
+			);
+			path = "Collection View";
 			sourceTree = "<group>";
 		};
 		FFEAB5101F984437ED172D45 /* Frameworks */ = {
@@ -117,6 +238,7 @@
 		AA373564205235ED0032F619 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = Dd;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = Kei;
@@ -221,7 +343,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA373572205235ED0032F619 /* ViewController.swift in Sources */,
+				AA373594205239080032F619 /* DdApiConstant.swift in Sources */,
+				AA37358A205238800032F619 /* DdUser.swift in Sources */,
+				AA373596205239080032F619 /* DdApiRequest.swift in Sources */,
+				AA373595205239080032F619 /* DdApiRequestor.swift in Sources */,
+				AA37358C205238A50032F619 /* DdCollection.swift in Sources */,
+				AA373593205239080032F619 /* DdApi.swift in Sources */,
+				AA37359D205241C90032F619 /* ViewControllerLogic.swift in Sources */,
+				AA3735A220524B520032F619 /* DdPhotoInteractor.swift in Sources */,
+				AA373585205237B40032F619 /* DdConstants.swift in Sources */,
+				AA3735A0205247F30032F619 /* DdImageCollectionViewCell.swift in Sources */,
+				AA373572205235ED0032F619 /* DdHomeViewController.swift in Sources */,
+				AA373588205237FE0032F619 /* DdPhoto.swift in Sources */,
 				AA373570205235ED0032F619 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93W3ZP6K6Y;
 				INFOPLIST_FILE = DefideDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kei.DefideDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -379,6 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93W3ZP6K6Y;
 				INFOPLIST_FILE = DefideDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kei.DefideDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
