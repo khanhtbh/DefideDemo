@@ -34,8 +34,8 @@ class DdPhoto: NSObject {
     var id: String!
     var createdAt: String!
     var updatedAt: String!
-    var width: Int = 0
-    var height: Int = 0
+    var width: Float = 0
+    var height: Float = 0
     var color: String = ""
     var likes: Int = 0
     var likedByUser: Bool = false
@@ -51,8 +51,8 @@ class DdPhoto: NSObject {
         id = json["id"].stringValue
         createdAt = json["created_at"].stringValue
         updatedAt = json["updated_at"].stringValue
-        width = json["width"].intValue
-        height = json["height"].intValue
+        width = json["width"].floatValue
+        height = json["height"].floatValue
         color = json["color"].stringValue
         likes = json["likes"].intValue
         likedByUser = json["liked_by_user"].boolValue

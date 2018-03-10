@@ -65,11 +65,61 @@
                     <navigationItem key="navigationItem" id="PVZ-Tg-bwE"/>
                     <connections>
                         <outlet property="photoCollectionView" destination="lDp-ry-Hay" id="5zJ-o6-19e"/>
+                        <segue destination="Wpr-hM-ait" kind="show" identifier="home_photoDetail" id="tFo-Ol-CuD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="455.19999999999999" y="118.29085457271366"/>
+        </scene>
+        <!--Dd Photo Detail View Controller-->
+        <scene sceneID="VEf-F2-7Rx">
+            <objects>
+                <viewController storyboardIdentifier="DdPhotoDetailViewController" id="Wpr-hM-ait" customClass="DdPhotoDetailViewController" customModule="DefideDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Thh-st-OmN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oe5-Bu-4nm">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="E9F-vk-XTd">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="225"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="E9F-vk-XTd" secondAttribute="trailing" id="K5H-pt-8Jv"/>
+                                    <constraint firstAttribute="bottom" secondItem="E9F-vk-XTd" secondAttribute="bottom" id="NeE-GK-NwH"/>
+                                    <constraint firstItem="E9F-vk-XTd" firstAttribute="top" secondItem="Oe5-Bu-4nm" secondAttribute="top" id="hjF-wp-AD1"/>
+                                    <constraint firstItem="E9F-vk-XTd" firstAttribute="leading" secondItem="Oe5-Bu-4nm" secondAttribute="leading" id="yar-oF-qqF"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="Wpr-hM-ait" id="paT-ml-hlb"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Oe5-Bu-4nm" firstAttribute="top" secondItem="4rj-n6-rap" secondAttribute="top" id="633-Ii-CDQ"/>
+                            <constraint firstItem="Oe5-Bu-4nm" firstAttribute="trailing" secondItem="4rj-n6-rap" secondAttribute="trailing" id="IY1-Cr-bCl"/>
+                            <constraint firstItem="Oe5-Bu-4nm" firstAttribute="leading" secondItem="4rj-n6-rap" secondAttribute="leading" id="WNR-gX-Y1s"/>
+                            <constraint firstItem="4rj-n6-rap" firstAttribute="bottom" secondItem="Oe5-Bu-4nm" secondAttribute="bottom" id="dz1-cJ-0e6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4rj-n6-rap"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="E9F-vk-XTd" id="exU-9N-oKQ"/>
+                        <outlet property="imageViewBottomConstraint" destination="NeE-GK-NwH" id="1Nl-Co-AHC"/>
+                        <outlet property="imageViewLeadingConstraint" destination="yar-oF-qqF" id="u3V-eR-4qq"/>
+                        <outlet property="imageViewTopConstraint" destination="hjF-wp-AD1" id="xnQ-5O-VAp"/>
+                        <outlet property="imageViewTrailingConstraint" destination="K5H-pt-8Jv" id="bWV-q3-3aQ"/>
+                        <outlet property="scrollView" destination="Oe5-Bu-4nm" id="5yU-Ja-qoJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bn-4k-q2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1558" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Q7-b4-cKp">
@@ -90,4 +140,7 @@
             <point key="canvasLocation" x="-503" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeholder" width="300" height="225"/>
+    </resources>
 </document>

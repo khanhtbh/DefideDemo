@@ -13,22 +13,17 @@ class DdHomeViewController: UIViewController {
     let numberOfCol: CGFloat = 3
     let spacing: CGFloat = 3
     
-    @IBOutlet weak var photoCollectionView: UICollectionView! {
-        didSet {
-            photoCollectionView.delegate = self
-            photoCollectionView.dataSource = self
-            photoCollectionView.contentInset = UIEdgeInsetsMake(0, 0, 20, 0)
-            let photoFlowLayout = DdPhotoFlowLayout()
-            photoFlowLayout.scrollDirection = .vertical
-            photoFlowLayout.cellSpacing = spacing
-            photoFlowLayout.minCellWidth = (DdGuiConstant.screenWidth - (numberOfCol - 1) * spacing) / numberOfCol
-            photoFlowLayout.minimumLineSpacing = spacing
-            photoFlowLayout.minimumInteritemSpacing = spacing
-            photoCollectionView.collectionViewLayout = photoFlowLayout
-        }
-    }
+    @IBOutlet weak var photoCollectionView: UICollectionView!
     
     var photos: Array<DdPhoto> = []
+    
+    
+    
+    var decorator: DdHomeDecorator? {
+        didSet {
+            decorator?.viewController = self
+        }
+    }
     
     var presentor: DdHomePresentor? {
         didSet {
@@ -36,18 +31,31 @@ class DdHomeViewController: UIViewController {
         }
     }
     
+    var router: DdHomeRouter? {
+        didSet {
+            router?.viewController = self
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Home"
-        presentor = DdHomePresentor()
         
+        decorator = DdHomeDecorator()
+        router = DdHomeRouter()
+        presentor = DdHomePresentor()
         presentor?.loadPhotos()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        router?.prepareForSegue(segue)
     }
 
 }
@@ -76,15 +84,16 @@ extension DdHomeViewController: UICollectionViewDelegate, UICollectionViewDataSo
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        router?.openPhotoDetail(photo: photos[indexPath.row])
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        var visibleIndexPaths = photoCollectionView.indexPathsForVisibleItems
-        visibleIndexPaths = visibleIndexPaths.sorted(by: { (idx1, idx2) -> Bool in
-            idx1.row > idx2.row
-        })
-        if let lastIndexPath = visibleIndexPaths.first {
-            if lastIndexPath.row == self.photos.count - 1 {
-                self.presentor?.loadPhotos()
-            }
+        guard photos.count > 10 else {return}
+        let visibleIndexPaths = photoCollectionView.indexPathsForVisibleItems
+        
+        if (visibleIndexPaths.contains { $0.row == self.photos.count - 4}) {
+            self.presentor?.loadPhotos()
         }
     }
 }
