@@ -88,10 +88,11 @@ extension DdHomeViewController: UICollectionViewDelegate, UICollectionViewDataSo
         router?.openPhotoDetail(photo: photos[indexPath.row])
     }
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard photos.count > 10 else {return}
-        let visibleIndexPaths = photoCollectionView.indexPathsForVisibleItems
         
+        let visibleIndexPaths = photoCollectionView.indexPathsForVisibleItems
         if (visibleIndexPaths.contains { $0.row == self.photos.count - 4}) {
             self.presentor?.loadPhotos()
         }

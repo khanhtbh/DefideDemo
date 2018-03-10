@@ -54,7 +54,7 @@ class DdPhotoFlowLayout: UICollectionViewFlowLayout {
     }
     
     override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        guard let collectionView = collectionView else {return true}
-        return collectionView.indexPathForItem(at: newBounds.origin)?.count == 0
+        guard let collectionView = collectionView else {return false}
+        return newBounds.height != collectionView.bounds.height
     }
 }
