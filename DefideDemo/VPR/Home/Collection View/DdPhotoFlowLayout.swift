@@ -13,36 +13,62 @@ class DdPhotoFlowLayout: UICollectionViewFlowLayout {
     var minCellWidth: CGFloat = 0
     var cellSpacing: CGFloat = 0
     
+    fileprivate var cache = [UICollectionViewLayoutAttributes]()
+    
+    override func prepare() {
+        guard
+            let numberOfItems = collectionView?.numberOfItems(inSection: 0),
+            numberOfItems != 0
+        else {return super.prepare()}
+        
+        for i in 0 ..< numberOfItems {
+            if cache.contains(where: { $0.indexPath.row == i })  {
+                continue
+            }
+            let indexPath = IndexPath(row: i, section: 0)
+            let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
+            attributes.frame = self.frameForItem(at: indexPath)
+            cache.append(attributes)
+        }
+        
+    }
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        let numberOfItems = collectionView?.numberOfItems(inSection: 0)
-        guard numberOfItems != 0, let attributes = super.layoutAttributesForElements(in: rect) else {return super.layoutAttributesForElements(in: rect)}
-        var newAttrs: [UICollectionViewLayoutAttributes] = []
-        for (_, attribute) in attributes.enumerated() {
-            if (attribute.representedElementCategory == .cell) {
-                let newAttr = self.layoutAttributesForItem(at: attribute.indexPath)
-                newAttrs.append(newAttr!)
+        var visibleLayoutAttributes = [UICollectionViewLayoutAttributes]()
+        
+        for attributes in cache {
+            if attributes.frame.intersects(rect) {
+                visibleLayoutAttributes.append(attributes)
             }
         }
-        return newAttrs
+        return visibleLayoutAttributes
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        let attributes = super.layoutAttributesForItem(at: indexPath)?.copy() as! UICollectionViewLayoutAttributes
-        let row = attributes.indexPath.row
+        return cache[indexPath.row]
+    }
+    
+    private func frameForItem(at indexPath: IndexPath) -> CGRect {
+        let row = indexPath.row
+        var frame = CGRect.zero
+        frame.size.height = minCellWidth
+        frame.size.width = minCellWidth
         if  row % 6 == 0 || row % 6 == 1 || row % 6 == 2 { // first line in group 6
-            attributes.frame.origin.x = CGFloat(row % 6) * (minCellWidth + cellSpacing)
-            attributes.frame.origin.y = CGFloat(row / 6) * 3 * (minCellWidth + cellSpacing)
+            frame.origin.x = CGFloat(row % 6) * (minCellWidth + cellSpacing)
+            frame.origin.y = CGFloat(row / 6) * 3 * (minCellWidth + cellSpacing)
         } else if row % 6 == 3 { // the 4th - left - in group 6
-            attributes.frame.origin.x = 0
-            attributes.frame.origin.y = CGFloat(row - 1) / 2 * (minCellWidth + cellSpacing)
+            frame.origin.x = 0
+            frame.origin.y = CGFloat(row - 1) / 2 * (minCellWidth + cellSpacing)
         } else if row % 6 == 4 { // the biggest item
-            attributes.frame.origin.x = (minCellWidth + cellSpacing)
-            attributes.frame.origin.y = CGFloat(row - 2) / 2 * (minCellWidth + cellSpacing)
+            frame.origin.x = (minCellWidth + cellSpacing)
+            frame.origin.y = CGFloat(row - 2) / 2 * (minCellWidth + cellSpacing)
+            frame.size.width = minCellWidth * 2 + cellSpacing
+            frame.size.height = minCellWidth * 2 + cellSpacing
         } else { // the last item - bottom - in group 6
-            attributes.frame.origin.x = 0
-            attributes.frame.origin.y = (CGFloat(row - 3) / 2 + 1) * (minCellWidth + cellSpacing)
+            frame.origin.x = 0
+            frame.origin.y = (CGFloat(row - 3) / 2 + 1) * (minCellWidth + cellSpacing)
         }
-        return attributes
+        return frame
     }
     
     override var collectionViewContentSize: CGSize {

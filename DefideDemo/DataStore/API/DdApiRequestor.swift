@@ -56,7 +56,9 @@ class DdApiRequestor: NSObject {
                 break
                 
             case .failure(let error):
-                
+                print("Response of URL", request.fullRequestURL(), "\nHeaders: ",
+                      headers.description , "\nError:",
+                      (error as NSError).description )
                 request.response?(false, error, nil)
                 break
             }
