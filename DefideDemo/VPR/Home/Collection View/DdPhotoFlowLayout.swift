@@ -21,10 +21,7 @@ class DdPhotoFlowLayout: UICollectionViewFlowLayout {
             numberOfItems != 0
         else {return super.prepare()}
         
-        for i in 0 ..< numberOfItems {
-            if cache.contains(where: { $0.indexPath.row == i })  {
-                continue
-            }
+        for i in cache.count ..< numberOfItems {
             let indexPath = IndexPath(row: i, section: 0)
             let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
             attributes.frame = self.frameForItem(at: indexPath)
