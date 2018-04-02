@@ -13,8 +13,10 @@ class DdHomePresentor: Presentor<DdHomeViewController> {
     var page: Int = 1
     var numberPerPage = 12
     var orderBy: DdPhotoOrderBy = .oldest
+    
     var canLoadMore: Bool = true
     var isLoading: Bool = false
+    
     let photoInteractor = DdPhotoInteractor()
     
     func loadPhotos() {

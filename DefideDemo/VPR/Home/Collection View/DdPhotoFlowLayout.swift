@@ -19,7 +19,7 @@ class DdPhotoFlowLayout: UICollectionViewFlowLayout {
         guard
             let numberOfItems = collectionView?.numberOfItems(inSection: 0),
             numberOfItems != 0
-        else {return super.prepare()}
+        else {return}
         
         for i in cache.count ..< numberOfItems {
             let indexPath = IndexPath(row: i, section: 0)
