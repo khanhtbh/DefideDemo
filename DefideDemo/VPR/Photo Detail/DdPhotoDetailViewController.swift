@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Vision
+
 
 class DdPhotoDetailViewController: UIViewController {
     
@@ -17,6 +19,10 @@ class DdPhotoDetailViewController: UIViewController {
     
     @IBOutlet weak var imageViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var predictedObjectLable: UILabel!
+    
+    @IBOutlet weak var percentageLabel: UILabel!
+    
     @IBOutlet weak var imageViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageViewLeadingConstraint: NSLayoutConstraint!
     
@@ -53,8 +59,8 @@ class DdPhotoDetailViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        updateMinZoomScaleForSize(view.bounds.size)
-        updateConstraintsForSize(view.bounds.size)
+        updateMinZoomScaleForSize(scrollView.bounds.size)
+        updateConstraintsForSize(scrollView.bounds.size)
     }
 
 }

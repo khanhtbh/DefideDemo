@@ -30,6 +30,7 @@
 		AA44422520527D1100C61C48 /* DdGuiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA44422420527D1100C61C48 /* DdGuiConstants.swift */; };
 		AA4442272052814100C61C48 /* DdHomePresentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4442262052814100C61C48 /* DdHomePresentor.swift */; };
 		AA4442292052880F00C61C48 /* DdPhotoFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA4442282052880F00C61C48 /* DdPhotoFlowLayout.swift */; };
+		AAF9A06B20727DFC00F2E972 /* MobileNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = AAF9A06A20727DFC00F2E972 /* MobileNet.mlmodel */; };
 		C1E3489F079B44049282E4DE /* Pods_DefideDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA80B031A757BB357CF9B27 /* Pods_DefideDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		AA44422420527D1100C61C48 /* DdGuiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdGuiConstants.swift; sourceTree = "<group>"; };
 		AA4442262052814100C61C48 /* DdHomePresentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdHomePresentor.swift; sourceTree = "<group>"; };
 		AA4442282052880F00C61C48 /* DdPhotoFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DdPhotoFlowLayout.swift; sourceTree = "<group>"; };
+		AAF9A06A20727DFC00F2E972 /* MobileNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = MobileNet.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		AA3735812052377B0032F619 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AAF9A06920727DE700F2E972 /* ML Model */,
 				AA373597205239BA0032F619 /* Storyboards */,
 				AA373576205235ED0032F619 /* Assets.xcassets */,
 			);
@@ -236,6 +239,14 @@
 				AA44422420527D1100C61C48 /* DdGuiConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		AAF9A06920727DE700F2E972 /* ML Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAF9A06A20727DFC00F2E972 /* MobileNet.mlmodel */,
+			);
+			path = "ML Model";
 			sourceTree = "<group>";
 		};
 		FFEAB5101F984437ED172D45 /* Frameworks */ = {
@@ -391,6 +402,7 @@
 				AA37359D205241C90032F619 /* ViewControllerLogic.swift in Sources */,
 				AA44422520527D1100C61C48 /* DdGuiConstants.swift in Sources */,
 				AA3735A220524B520032F619 /* DdPhotoInteractor.swift in Sources */,
+				AAF9A06B20727DFC00F2E972 /* MobileNet.mlmodel in Sources */,
 				AA373585205237B40032F619 /* DdConstants.swift in Sources */,
 				AA4442292052880F00C61C48 /* DdPhotoFlowLayout.swift in Sources */,
 				AA4025BC20538075006CCD0C /* DdPhotoDetailViewController.swift in Sources */,
@@ -540,7 +552,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93W3ZP6K6Y;
 				INFOPLIST_FILE = DefideDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kei.DefideDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -557,7 +569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 93W3ZP6K6Y;
 				INFOPLIST_FILE = DefideDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kei.DefideDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
